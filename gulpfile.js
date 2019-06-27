@@ -16,7 +16,8 @@ const   rm = require('gulp-rm'),    // удаление файлов
         uglify = require('gulp-uglify'), // минификация js
         svgo = require('gulp-svgo'), // оптимизация svg
         svgSprite = require('gulp-svg-sprite'), // объединения всех svg в один
-        gulpif = require('gulp-if'); // плагин условия
+        gulpif = require('gulp-if'), // плагин условия
+        pug = require('gulp-pug'); // шаблонизатор pug
 
 const env = process.env.NODE_ENV; // env - переменная из переменных окружения node.js, определяется в package.json
 
@@ -30,12 +31,19 @@ sass.compiler = require('node-sass');
 task('clean', () => {
     return src(`${DIST_PATH}/**/*`, { read: false }).pipe(rm());
 });
-
+/*
 // таск копирования HTML
 task('copy:html', () => {
     return src(`${SRC_PATH}/*.html`)
         .pipe(dest(`${DIST_PATH}`))
         .pipe(reload({stream: true}));
+});
+*/
+
+task('pug', () => {
+    return src(`${SRC_PATH}/pages/index.pug`)
+        .pipe(pug({pretty: true}))
+        .pipe(dest(`${DIST_PATH}`));
 });
 
 // таск стилей
@@ -109,7 +117,7 @@ task('watch', ()=> {
 // таск по умолчанию
 task('default', 
     series('clean', 
-            parallel('copy:html', 'styles', 'scripts', 'icons'), 
+            parallel('pug', 'styles', 'scripts', 'icons'), 
             parallel('watch', 'server')
     )
 );
@@ -117,6 +125,6 @@ task('default',
 // таск build
 task('build', 
     series('clean', 
-            parallel('copy:html', 'styles', 'scripts', 'icons')
+            parallel('pug', 'styles', 'scripts', 'icons')
     )
 );
