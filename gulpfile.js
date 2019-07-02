@@ -31,19 +31,12 @@ sass.compiler = require('node-sass');
 task('clean', () => {
     return src(`${DIST_PATH}/**/*`, { read: false }).pipe(rm());
 });
-/*
-// таск копирования HTML
-task('copy:html', () => {
-    return src(`${SRC_PATH}/*.html`)
-        .pipe(dest(`${DIST_PATH}`))
-        .pipe(reload({stream: true}));
-});
-*/
 
 task('pug', () => {
     return src(`${SRC_PATH}/pages/index.pug`)
         .pipe(pug({pretty: true}))
-        .pipe(dest(`${DIST_PATH}`));
+        .pipe(dest(`${DIST_PATH}`))
+        .pipe(reload({stream: true}));
 });
 
 // таск стилей
@@ -96,6 +89,20 @@ task('icons', () => {
     .pipe(dest(`${DIST_PATH}/images/icons`))
 });
 
+// таск копирования изображений
+task("copy:img", () => {
+    return src(`${SRC_PATH}/images/*.*`)
+        .pipe(dest(`${DIST_PATH}/images`))
+        .pipe(reload({ stream: true })); //перезагрузим браузер (задача выполняется внутри потока (stream:true))
+});
+
+// таск копирования шрифтов
+task("copy:fonts", () => {
+    return src(`${SRC_PATH}/fonts/*.*`)
+        .pipe(dest(`${DIST_PATH}/fonts`))
+        .pipe(reload({ stream: true })); //перезагрузим браузер (задача выполняется внутри потока (stream:true))
+});
+
 // таск дев-сервера
 task('server', () => {
     browserSync.init({
@@ -106,18 +113,19 @@ task('server', () => {
     });
 });
 
+
 // вотчеры
 task('watch', ()=> {
+    watch(`./${SRC_PATH}/pages/**/*.pug`, series('pug'));
     watch(`./${SRC_PATH}/styles/**/*.scss`, series('styles'));
     watch(`./${SRC_PATH}/scripts/**/*.js`, series('scripts'));
-    watch(`./${SRC_PATH}/*.html`, series('copy:html'));
     watch(`./${SRC_PATH}/images/icons/**/*.svg`, series('icons'));
 })
 
 // таск по умолчанию
 task('default', 
     series('clean', 
-            parallel('pug', 'styles', 'scripts', 'icons'), 
+            parallel('pug', 'styles', 'scripts', 'icons', 'copy:img', 'copy:fonts'), 
             parallel('watch', 'server')
     )
 );
@@ -125,6 +133,6 @@ task('default',
 // таск build
 task('build', 
     series('clean', 
-            parallel('pug', 'styles', 'scripts', 'icons')
+            parallel('pug', 'styles', 'scripts', 'icons', 'copy:img', 'copy:fonts')
     )
 );

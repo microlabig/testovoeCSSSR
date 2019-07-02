@@ -1,9 +1,180 @@
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ru")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title Document
     body
-    h1 hello
+        .wrapper
+
+            header.header
+                .header__container
+                    .header__logo
+                        img(src="../images/logo.png" alt="CSSSR").header__icon
+                    .header__secret
+                        img(src="../images/secret.png" alt="Секретно! Заполнено собственноручно").header__icon
+                    .header__file
+                        h1.hidden ДЕЛО
+                        img(src="../images/delo.png" alt="ДЕЛО").header__icon
+
+            main.maincontent
+
+                section.contacts
+                    .container
+                        -
+                         var contactsArray = [
+                            {
+                                description: "Полное ФИО",
+                                value: "Безместин Игорь Юрьевич"
+                            },
+                            {
+                                description: "Год рождения",
+                                value: "1988"
+                            },                    
+                            {
+                                description: "Место жительства",
+                                value: "г. Арзамас, Россия"
+                            },
+                            {
+                                description: "Скайп",
+                                value: "igor-rock_1"
+                            },
+                            {
+                                description: "Почта",
+                                value: "igorbezmestin@gmail.com"
+                            }
+                         ]
+                        - for (var i = 0; i < contactsArray.length; i++)
+                            label.contacts__row
+                                p.contacts__description #{contactsArray[i].description}
+                                input(type="text" value=`${contactsArray[i].value}`).contacts__input
+                
+                section.skills
+                    .container
+                        h2.title Расскажите о себе чекбоксами
+                        p.description Отметьте чекбоксами пункты, которые соответствуют вашим скиллам. Кстати, отсутствие опыта не означает, что у вас меньше шансов стать одним из наших товарищей. Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.
+                        .skills__wrapper
+                            ul.skills__list
+                                -
+                                 var skillsArray = [
+                                    {
+                                        description: "БЭМ/OOCSS", checked: false
+                                    },
+                                    {
+                                        description: "Pug (Jade)", checked: true
+                                    },
+                                    {
+                                        description: "Stylus/LESS/SASS", checked: false
+                                    },
+                                    {
+                                        description: "Работаю с SVG", checked: false
+                                    },
+                                    {
+                                        description: "Верстаю семантично", checked: false
+                                    },
+                                    {
+                                        description: "Accessibility (A11Y)", checked: true
+                                    },
+                                    {
+                                        description: "ES2015/ES2016", checked: true
+                                    },
+                                    {
+                                        description: "Gulp/GRUNT", checked: false
+                                    },
+                                    {
+                                        description: "Webpack", checked: false
+                                    },
+                                    {
+                                        description: "Дружу с WebGL", checked: false
+                                    },
+                                    {
+                                        description: "jQuery", checked: false
+                                    },
+                                    {
+                                        description: "Знаю/изучаю Angular", checked: true
+                                    },
+                                    {
+                                        description: "Знаю/изучаю React", checked: true
+                                    },
+                                    {
+                                        description: "Знаю/изучаю Node.js", checked: true
+                                    },
+                                    {
+                                        description: "Использую Git", checked: true
+                                    },
+                                    {
+                                        description: "С глазомером всё ок", checked: true
+                                    },
+                                    {
+                                        description: "Читаю <a href='//blog.csssr.ru'>blog.csssr.ru</a>", checked: false
+                                    },
+                                    {
+                                        description: "Я ленивый(-ая)", checked: true
+                                    },
+                                    {
+                                        description: "У меня хороший английский", checked: true
+                                    },
+                                 ]
+                                - for (var i = 0; i < skillsArray.length; i++)
+                                    li.skills__item
+                                        label.skills__label
+                                            if skillsArray[i].checked                                        
+                                                input(type="checkbox" checked=`${skillsArray[i].checked}`).skills__checkbox.hidden
+                                            else 
+                                                input(type="checkbox").skills__checkbox.hidden
+                                            .skills__description !{skillsArray[i].description}
+                    
+                section.jslevel
+                    .container
+                        h2.title Уровень владения JavaScript
+                        .slider
+                            .slider__pin
+                            .slider__pic
+                                img(src="../images/slider.png" alt="ДЕЛО").slider__icon
+                            .slider__text-wrapper
+                                -
+                                 var jsLevelArray = [
+                                    'Не владею', 
+                                    'Использую готовые решения', 
+                                    'Использую готовые решения и умею их переделывать',
+                                    'Пишу сложный JS с нуля'
+                                 ]
+                                each level in jsLevelArray
+                                    .slider__text #{level}
+
+                section.about
+                    .container
+                        h2.title Расскажите о себе словами
+                        p.description Напишите пару предложений, чем вас привлекла наша вакансия и чего вы ожидаете от работы в CSSSR. Кстати, будет здорово, если при нехватке места для текста строки будут добавляться автоматически.
+                        label.about__label
+                            - var aboutText = 'Ну-ууу-уу...\nЭэээ...'
+                            textarea.about__input #{aboutText}
+                
+                section.future
+                    .container
+                        h2.title Какие у вас планы на будущее?
+                        p.description Этот ответ ни на что не повлияет. Не беда, если в будущем ваши планы поменяются.
+                        .plans
+                            ul.plans__list
+                                -
+                                 var futureArray = [
+                                     {text: 'Верстать', checked: true}, 
+                                     {text: 'Прокачиваться в JS'}, 
+                                     {text: 'Менеджерство'}, 
+                                     {text: 'Другое'}
+                                 ]
+                                each plan in futureArray
+                                    li.plans__item
+                                        label.plans__label
+                                            if plan.checked
+                                                input(type="radio" name="future" checked) 
+                                            else
+                                                input(type="radio" name="future")
+                                            span.plans__text #{plan.text}
+
+            footer.footer
+                .footer__container
+                    p.footer__date Дата заполнения
+                    label.footer__label
+                        input(type="text" value="01.07.2019").footer__input
