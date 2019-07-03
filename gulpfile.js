@@ -14,6 +14,8 @@ const   rm = require('gulp-rm'),    // удаление файлов
         sourcemaps = require('gulp-sourcemaps'), // source maps
         babel = require('gulp-babel'), // ES 6 -> браузеросовместимый код
         uglify = require('gulp-uglify'), // минификация js
+        notify = require("gulp-notify"), // уведомления 
+        wait = require('gulp-wait2'), // задержка
         svgo = require('gulp-svgo'), // оптимизация svg
         svgSprite = require('gulp-svg-sprite'), // объединения всех svg в один
         gulpif = require('gulp-if'), // плагин условия
@@ -45,8 +47,14 @@ task('styles', () => {
     .pipe(gulpif(env === 'dev', sourcemaps.init()))
         .pipe(concat('main.min.scss'))
         .pipe(sassGlob())
-        .pipe(sass().on('error', sass.logError))
-        .pipe(px2rem())
+        //.pipe(sass().on('error', sass.logError))
+        .pipe(wait(1500))
+        .pipe(sass({ outputStyle: 'expand' }).on("error", notify.onError() ))
+        /* .pipe(px2rem({
+            dpr: 1,             // base device pixel ratio (default: 2)
+            rem: 15,            // root element (html) font-size (default: 16)
+            one: false          // whether convert 1px to rem (default: false)
+        }))  */
         .pipe(gulpif(env === 'dev', autoprefixer({ cascade: false })))
         .pipe(gulpif(env === 'build', gcmq()))
         .pipe(gulpif(env === 'build', cleanCSS()))

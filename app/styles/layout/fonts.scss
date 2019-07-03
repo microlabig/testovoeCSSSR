@@ -1,3 +1,22 @@
-.new {
-    color: red;
+@font-face {
+    font-family: 'courier-new';
+    src: url('../../fonts/courier-new-webfont.woff2') format('woff2'), url('../../fonts/courier-new-webfont.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
 }
+
+@font-face {
+    font-family: 'pt-sans';
+    src: url('../../fonts/pt_sans-web-bold-webfont.woff2') format('woff2'), url('../../fonts/pt_sans-web-bold-webfont.woff') format('woff');
+    font-weight: $bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'pt-sans';
+    src: url('../../fonts/pt_sans-web-regular-webfont.woff2') format('woff2'), url('../../fonts/pt_sans-web-regular-webfont.woff') format('woff');
+    font-weight: $regular;
+    font-style: normal;
+}
+
+
