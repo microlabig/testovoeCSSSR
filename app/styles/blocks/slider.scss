@@ -1,0 +1,48 @@
+.slider__button {
+    position: relative;
+    background: url('../../images/button-slider.png') center center / cover no-repeat;
+    
+    width: 16px; 
+    height: 14px;
+}
+
+
+.slider__level {
+    display: flex;
+}
+
+.slider__level-item {
+    font-size: 13px;
+    font-weight: $bold;  
+    white-space: nowrap;  
+    margin-right: 10%;
+
+    &:before {
+        content: "";
+        display: block;  
+        background: url('../../images/line-vertical-l.png') center center / cover no-repeat; 
+        width: 3px; 
+        height: 26px;
+        margin-bottom: 8px;
+    }
+
+    &:nth-of-type(2),
+    &:nth-of-type(3) {
+        &:before {
+            background: url('../../images/line-vertical-s.png') center center / cover no-repeat; 
+            width: 4px; 
+            height: 10px;
+            margin-bottom: 24px;
+        }
+    }
+    &:last-of-type {
+        &:before {
+            position: relative;
+            left: 100%;
+        }
+    }
+
+    &:nth-of-type(3) {
+        white-space: wrap;
+    } 
+}

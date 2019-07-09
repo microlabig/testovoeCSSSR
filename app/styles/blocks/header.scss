@@ -1,0 +1,25 @@
+.header {
+    margin-bottom: 61px;
+}
+
+.header__logo-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__logo {
+    width: 154px;
+    height: 52px;
+}
+
+.header__secret {
+    width: 252px;
+    height: 106px;
+}
+
+.header__file {
+    width: 221px;
+    height: 118px;
+    overflow: hidden;
+    margin: 0 auto;
+}

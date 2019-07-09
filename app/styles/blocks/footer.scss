@@ -1,0 +1,29 @@
+
+.footer__container {
+    display: flex;
+    align-items: center;
+}
+
+.footer__text {
+    font-size: 22.5px;
+    font-weight: $bold;    
+}
+
+.footer__input {  
+    //flex-grow: 0;
+    border: none;
+
+    width: 206px;
+
+    background-image: url('../../images/line.png');
+    background-repeat: no-repeat;
+    background-position-x: left; 
+    background-position-y: bottom;
+    background-size: inherit;
+    background-color: transparent;
+
+    line-height: 36px;
+
+    padding: 0 12px 7px 12px;
+    margin-left: 18px;
+}

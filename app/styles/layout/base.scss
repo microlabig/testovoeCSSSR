@@ -1,14 +1,28 @@
-html {
-   /*  font-size: 15px;
-    
-    @include phones-small {
-        font-size: $basefontsize-phonesmall;
-    } */
+//прибиваем футер
+
+html,
+body {
+  height: 100%;
 }
 
-body,
-html {
-    height: 100%;
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+header,
+footer {
+  flex: 0 0 auto;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+// остальные настройки
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -19,24 +33,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
     color: $text-color;
     background-color: $bg-color;
-}
-
-.wrapper {
-    overflow: hidden;
-    min-height: 100%;
-    position: relative;
-    max-width: 1000px;
-    background: url('../../images/bg.jpg') center center / cover no-repeat;
-    margin: 0 auto;
-}
-
-.container {
-    width: 100%;
-}
-
-
-* {
-    box-sizing: border-box;
 }
 
 ul {
@@ -65,11 +61,6 @@ button[type="button"] {
     background-color: transparent;
 }
 
-a {
-    color: inherit;
-    cursor: pointer;
-    text-decoration: none;
-}
 
 img {
     display: block;
@@ -82,7 +73,8 @@ textarea {
     display: inline-block;
     width: 100%;
     
-    font-family: 'courier-new', Arial, sans-serif;
+    font-family: "Courier New", "Courier", serif;
+    font-weight: 100;
     font-size: 30px;
     line-height: 1.42;
     -webkit-font-smoothing: antialiased;
@@ -91,17 +83,36 @@ textarea {
     color: $input-color;    
 }
 
-input[type="text"] {
-    border: 1px solid red;
-    background-image: url('../../images/line.png');
-    background-repeat: repeat-x;
-    background-position: left bottom;
-    background-size: inherit;
-    background-color: transparent;
+.wrapper {
+      
+    position: relative;
+    overflow: hidden;
 
-    padding-left: 16px;
+    min-height: 100%;
+    max-width: 1000px;
+
+    background: url('../../images/bg.jpg') center center / cover no-repeat;
+    margin: 0 auto;
+    padding: 72px 54px 97px 112px;
+}
+
+.maincontent {
+    padding-right: 64px;
+}
+
+.container {
+    width: 100%;
 }
 
 .hidden {
     display: none;
+}
+
+.title {
+    font-size: 24px;
+    line-height: 50px;
+}
+
+.description {
+    margin-bottom: 35px;
 }

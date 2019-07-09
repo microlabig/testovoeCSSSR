@@ -1,0 +1,66 @@
+.skills {
+    margin-bottom: 67px;
+}
+
+.skills__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, 40px);
+    grid-auto-flow: column;
+}
+
+.skills__label {
+    cursor: pointer;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.skills__description {
+    font-size: 21px;
+    line-height: 25px;
+    color: $black;
+    font-weight: $bold;
+}
+
+.skills__link {
+    color: $link-color;
+}
+
+// замена оригинального checkbox
+
+.skills__checkbox-fake {
+    position: relative;
+    margin-right: 6px;
+
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+
+        background: url('../../images/check.png') center center / cover no-repeat; 
+
+        width: 20px;
+        height: 26px;
+
+        top: -8px;
+        left: 2px;  
+
+        opacity: 1;
+        transition: opacity $delay;
+    }
+}
+
+.skills__image-btn {
+        display: block;
+
+        background: url('../../images/checkbox.png') center center / cover no-repeat; 
+
+        width: 18px;
+        height: 18px; 
+}
+
+.skills__checkbox:not(:checked) {
+    &+.skills__checkbox-fake:before {
+        opacity: 0;        
+    }
+}

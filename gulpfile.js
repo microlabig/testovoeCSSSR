@@ -76,7 +76,7 @@ task('scripts', () => {
 });
 
 // таск иконок
-task('icons', () => {
+/* task('icons', () => {
     return src(`${SRC_PATH}/images/icons/*.svg`)
     .pipe(svgo({
         plugins: [
@@ -95,7 +95,7 @@ task('icons', () => {
         }
     }))
     .pipe(dest(`${DIST_PATH}/images/icons`))
-});
+}); */
 
 // таск копирования изображений
 task("copy:img", () => {
@@ -127,13 +127,13 @@ task('watch', ()=> {
     watch(`./${SRC_PATH}/pages/**/*.pug`, series('pug'));
     watch(`./${SRC_PATH}/styles/**/*.scss`, series('styles'));
     watch(`./${SRC_PATH}/scripts/**/*.js`, series('scripts'));
-    watch(`./${SRC_PATH}/images/icons/**/*.svg`, series('icons'));
+    //watch(`./${SRC_PATH}/images/icons/**/*.svg`, series('icons'));
 })
 
 // таск по умолчанию
 task('default', 
     series('clean', 
-            parallel('pug', 'styles', 'scripts', 'icons', 'copy:img', 'copy:fonts'), 
+            parallel('pug', 'styles', 'scripts', /* 'icons', */ 'copy:img', 'copy:fonts'), 
             parallel('watch', 'server')
     )
 );
@@ -141,6 +141,6 @@ task('default',
 // таск build
 task('build', 
     series('clean', 
-            parallel('pug', 'styles', 'scripts', 'icons', 'copy:img', 'copy:fonts')
+            parallel('pug', 'styles', 'scripts', /* 'icons', */ 'copy:img', 'copy:fonts')
     )
 );

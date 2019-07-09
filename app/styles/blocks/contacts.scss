@@ -1,0 +1,41 @@
+.contacts {
+    margin-bottom: 72px;
+}
+
+.contacts__item {
+    margin-bottom: 26px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.contacts__row {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+}
+
+.contacts__description {
+    font-size: 22.4px;
+    font-weight: $bold;
+    white-space: nowrap;   
+}
+
+.contacts__input {
+    border: none;
+
+    background-image: url('../../images/line.png');
+    background-repeat: no-repeat;
+    background-position-x: left; 
+    background-position-y: bottom;
+    background-size: inherit;
+    background-color: transparent;
+
+    line-height: 36px;
+
+    padding-left: 16px;
+    margin-left: 16px;
+    
+    padding-bottom: 7px;
+}
