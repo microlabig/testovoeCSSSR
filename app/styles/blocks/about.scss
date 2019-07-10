@@ -1,5 +1,9 @@
 .about {
-    margin-bottom: 30px;
+    margin-bottom: 32px;
+
+    & .description {
+        margin-bottom: 22px;
+    }
 }
 
 .about__textarea {
@@ -14,6 +18,7 @@
     background-color: transparent;
 
     line-height: 60px;
+    height: 185px;
 
     padding-bottom: 7px;
 }

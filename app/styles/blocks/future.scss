@@ -1,5 +1,7 @@
 .future {
-    margin-bottom: 70px;
+    & .description {
+        margin-bottom: 15px;
+    }
 }
 
 .future__text {
@@ -14,7 +16,7 @@
 }
 
 .future__item {    
-    margin-right: 13px;
+    margin-right: 23px;
 
     &:last-child {
         margin-right: 0;

@@ -15,27 +15,40 @@
     font-size: 13px;
     font-weight: $bold;  
     white-space: nowrap;  
-    margin-right: 10%;
 
     &:before {
         content: "";
         display: block;  
         background: url('../../images/line-vertical-l.png') center center / cover no-repeat; 
-        width: 3px; 
-        height: 26px;
-        margin-bottom: 8px;
+        width: 4px; 
+        height: 22px;
+        margin-bottom: 10px;
     }
+
+    &:nth-of-type(1) {
+        margin-right: 11.3%;
+    }
+    &:nth-of-type(2) {
+        margin-right: 7.8%;
+    }
+    &:nth-of-type(3) {
+        margin-right: 11%;
+    }
+    
 
     &:nth-of-type(2),
     &:nth-of-type(3) {
         &:before {
             background: url('../../images/line-vertical-s.png') center center / cover no-repeat; 
             width: 4px; 
-            height: 10px;
-            margin-bottom: 24px;
+            height: 9px;
+            margin-bottom: 17px;
         }
     }
+
     &:last-of-type {
+        margin-right: 0;
+
         &:before {
             position: relative;
             left: 100%;
@@ -43,6 +56,6 @@
     }
 
     &:nth-of-type(3) {
-        white-space: wrap;
-    } 
+        white-space: normal;
+    }     
 }

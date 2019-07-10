@@ -1,9 +1,9 @@
 .contacts {
-    margin-bottom: 72px;
+    margin-bottom: 60px;
 }
 
 .contacts__item {
-    margin-bottom: 26px;
+    margin-bottom: 19px;
 
     &:last-child {
         margin-bottom: 0;
@@ -19,7 +19,8 @@
 .contacts__description {
     font-size: 22.4px;
     font-weight: $bold;
-    white-space: nowrap;   
+    white-space: nowrap;  
+    line-height: 20px; 
 }
 
 .contacts__input {
@@ -36,6 +37,6 @@
 
     padding-left: 16px;
     margin-left: 16px;
-    
-    padding-bottom: 7px;
+
+    padding-bottom: 6px;
 }

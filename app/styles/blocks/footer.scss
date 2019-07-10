@@ -1,12 +1,13 @@
 
 .footer__container {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .footer__text {
     font-size: 22.5px;
-    font-weight: $bold;    
+    font-weight: $bold;   
+    line-height: 16px; 
 }
 
 .footer__input {  

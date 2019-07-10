@@ -76,7 +76,7 @@ textarea {
     font-family: "Courier New", "Courier", serif;
     font-weight: 100;
     font-size: 30px;
-    line-height: 1.42;
+    //line-height: 1.42;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     
@@ -98,6 +98,8 @@ textarea {
 
 .maincontent {
     padding-right: 64px;
+    
+    margin-bottom: 76px;
 }
 
 .container {
@@ -110,7 +112,7 @@ textarea {
 
 .title {
     font-size: 24px;
-    line-height: 50px;
+    line-height: 45px;
 }
 
 .description {
