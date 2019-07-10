@@ -35,6 +35,9 @@
     position: relative;
     margin-right: 6px;
 
+    width: 26px;
+    height: 26px;
+
     &:before {
         content: "";
         display: block;
@@ -52,13 +55,8 @@
         opacity: 1;
         transition: opacity $delay;
     }
-}
 
-.future__image-btn {
-    width: 26px;
-    height: 26px;
-
-    &:before {
+    &:after {
         content: "";
         display: block;
         position: absolute;

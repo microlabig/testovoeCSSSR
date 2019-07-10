@@ -31,6 +31,7 @@
 .skills__checkbox-fake {
     position: relative;
     margin-right: 6px;
+    width: 20px;
 
     &:before {
         content: "";
@@ -48,15 +49,16 @@
         opacity: 1;
         transition: opacity $delay;
     }
-}
 
-.skills__image-btn {
+    &:after {
+        content: "";
         display: block;
 
         background: url('../../images/checkbox.png') center center / cover no-repeat; 
 
         width: 18px;
         height: 18px; 
+    }
 }
 
 .skills__checkbox:not(:checked) {
