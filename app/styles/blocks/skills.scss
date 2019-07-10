@@ -1,5 +1,13 @@
 .skills {
     margin-bottom: 38px;
+
+    @include tablets {
+        margin-bottom: 30px;
+    }
+
+    @include phones {
+        margin-bottom: 24px;
+    }
 }
 
 .skills__list {
@@ -8,6 +16,26 @@
     grid-template-rows: repeat(7, 35px);
     grid-auto-flow: column;
     grid-column-gap: 21px;
+
+    @include desktop {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(11, 35px);
+    }
+
+    @include phones {
+        display: block;
+    }
+}
+
+.skills__item {
+    @include phones {
+        margin-bottom: 8px;
+        margin-left: 10px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 }
 
 .skills__label {
@@ -23,6 +51,11 @@
     font-weight: $bold;
 
     margin-left: 20px;
+
+    @include tablets {
+        font-size: 17px;
+        line-height: 20px;
+    }
 }
 
 .skills__link {

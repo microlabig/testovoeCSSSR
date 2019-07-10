@@ -1,5 +1,9 @@
 .header {
     margin-bottom: 50px;
+
+    @include phones {
+        margin-bottom: 35px;
+    }
 }
 
 .header__logo-wrapper {
@@ -7,11 +11,23 @@
     justify-content: space-between;
 
     margin-bottom: -10px;
+
+    @include tablets {
+        align-items: center;
+    }
+
+    @include phones {
+        flex-direction: column;
+    }
 }
 
 .header__logo {
     width: 154px;
     height: 52px;
+
+    @include phones {
+        margin-bottom: 15px;
+    }
 }
 
 .header__secret {
@@ -20,6 +36,14 @@
 
     top: -13px;
     position: relative;
+    
+    @include tablets {
+        left: 15px;
+    }
+
+    @include phones {
+        left: 0;
+    }
 }
 
 .header__file {
@@ -30,4 +54,8 @@
 
     right: 50px;
     position: relative;
+
+    @include desktop {
+        right: 0;
+    }
 }

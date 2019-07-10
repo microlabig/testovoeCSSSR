@@ -33,6 +33,11 @@ body {
     -moz-osx-font-smoothing: grayscale;
     color: $text-color;
     background-color: $bg-color;
+
+    @include tablets {
+        font-size: 14px;
+        background-color: transparent;        
+    }
 }
 
 ul {
@@ -80,7 +85,15 @@ textarea {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     
-    color: $input-color;    
+    color: $input-color;  
+    
+    @include desktop {
+        font-size: 24px;
+    }
+
+    @include tablets {
+        font-size: 18px;
+    }
 }
 
 .wrapper {
@@ -94,12 +107,31 @@ textarea {
     background: url('../../images/bg.jpg') center center / cover no-repeat;
     margin: 0 auto;
     padding: 72px 54px 97px 112px;
+
+    @include desktop {
+        padding-left: 90px;
+        padding-right: 90px;
+    }
+
+    @include tablets {
+        padding: 20px 30px;
+    }
+    
+    @include phones {
+        padding: 10px;
+    }
+    // padding: 7.1% 5.1% 7% 11%;
 }
 
 .maincontent {
     padding-right: 64px;
     
     margin-bottom: 76px;
+
+    @include desktop {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
 }
 
 .container {
@@ -113,8 +145,26 @@ textarea {
 .title {
     font-size: 24px;
     line-height: 45px;
+    
+    @include tablets {
+        font-size: 20px;
+        line-height: 40px;
+    }
+
+    @include phones {
+        line-height: 26px;       
+    }
 }
 
 .description {
     margin-bottom: 35px;
+    
+    @include tablets {
+        margin-bottom: 25px;        
+    }
+
+    @include phones {
+        text-align: justify;  
+        margin-bottom: 15px;     
+    }
 }

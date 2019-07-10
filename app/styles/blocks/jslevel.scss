@@ -1,7 +1,11 @@
 .jslevel {
-    margin-bottom: 27px;
+    margin-bottom: 26px;
 
     & .title {
         margin-bottom: 10px;
+    }
+
+    @include phones {
+        margin-bottom: 24px;
     }
 }

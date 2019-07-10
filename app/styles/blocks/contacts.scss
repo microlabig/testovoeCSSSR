@@ -1,5 +1,9 @@
 .contacts {
     margin-bottom: 60px;
+
+    @include tablets {
+        margin-bottom: 28px;
+    }
 }
 
 .contacts__item {
@@ -14,6 +18,11 @@
     display: flex;
     flex-wrap: nowrap;
     align-items: flex-end;
+
+    @include phones {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .contacts__description {
@@ -21,17 +30,16 @@
     font-weight: $bold;
     white-space: nowrap;  
     line-height: 20px; 
+    
+    @include tablets {
+        font-size: 18px;
+    }
 }
 
 .contacts__input {
     border: none;
 
-    background-image: url('../../images/line.png');
-    background-repeat: no-repeat;
-    background-position-x: left; 
-    background-position-y: bottom;
-    background-size: inherit;
-    background-color: transparent;
+    background: url('../../images/line.png') left bottom / contain no-repeat;
 
     line-height: 36px;
 
@@ -39,4 +47,14 @@
     margin-left: 16px;
 
     padding-bottom: 6px;
+
+    @include desktop {
+        padding-bottom: 0;
+    }
+
+    @include phones {
+        text-align: center;
+        padding-left: 0;
+        margin-left: 0;
+    }
 }

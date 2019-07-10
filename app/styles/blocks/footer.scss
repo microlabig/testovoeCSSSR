@@ -2,12 +2,20 @@
 .footer__container {
     display: flex;
     align-items: flex-end;
+
+    @include phones {
+        justify-content: space-evenly;
+    }
 }
 
 .footer__text {
     font-size: 22.5px;
     font-weight: $bold;   
     line-height: 16px; 
+
+    @include tablets {
+        font-size: 20px;
+    }
 }
 
 .footer__input {  
@@ -27,4 +35,15 @@
 
     padding: 0 12px 7px 12px;
     margin-left: 18px;
+
+    @include desktop {
+        max-width: 172px;
+    }
+    @include tablets {
+        max-width: 136px;
+        line-height: 20px;
+    }
+    @include phones {
+        margin: 0;
+    }
 }

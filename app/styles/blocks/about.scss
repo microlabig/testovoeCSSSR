@@ -3,6 +3,14 @@
 
     & .description {
         margin-bottom: 22px;
+
+        @include tablets {
+            margin-bottom: 0;
+        }
+    }
+
+    @include phones {
+        margin-bottom: 24px;
     }
 }
 

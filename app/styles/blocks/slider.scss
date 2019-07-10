@@ -6,24 +6,22 @@
     height: 14px;
 }
 
+.slider__pic {
+    background: url('../../images/slider.png') center center / contain no-repeat;
+    width: 100%;
+    height: 31px;
+    transform: translateY(-4px);
+}
 
 .slider__level {
     display: flex;
 }
 
 .slider__level-item {
+    cursor: pointer;
     font-size: 13px;
     font-weight: $bold;  
-    white-space: nowrap;  
-
-    &:before {
-        content: "";
-        display: block;  
-        background: url('../../images/line-vertical-l.png') center center / cover no-repeat; 
-        width: 4px; 
-        height: 22px;
-        margin-bottom: 10px;
-    }
+    white-space: nowrap; 
 
     &:nth-of-type(1) {
         margin-right: 11.3%;
@@ -32,30 +30,37 @@
         margin-right: 7.8%;
     }
     &:nth-of-type(3) {
-        margin-right: 11%;
-    }
-    
+        margin-right: 11.5%;
+    }    
 
-    &:nth-of-type(2),
-    &:nth-of-type(3) {
-        &:before {
-            background: url('../../images/line-vertical-s.png') center center / cover no-repeat; 
-            width: 4px; 
-            height: 9px;
-            margin-bottom: 17px;
-        }
-    }
-
+    &:nth-of-type(1),
     &:last-of-type {
-        margin-right: 0;
+        transform: translateY(4px);
+    }
 
-        &:before {
-            position: relative;
-            left: 100%;
+    @include desktop {
+        white-space: normal; 
+
+        &:last-of-type {
+            text-align: right;
         }
     }
 
-    &:nth-of-type(3) {
-        white-space: normal;
-    }     
+    @include tablets {
+        &:nth-of-type(1) {
+            margin-right: 8.3%;
+        }        
+    }
+
+    @include phones {
+        &:nth-of-type(1) {
+            margin-right: 4.3%;
+        }
+        &:nth-of-type(2) {
+            margin-right: 6.8%;
+        }
+        &:nth-of-type(3) {
+            margin-right: 3.5%;
+        }      
+    }
 }
