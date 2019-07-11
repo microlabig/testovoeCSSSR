@@ -15,7 +15,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(7, 35px);
     grid-auto-flow: column;
-    grid-column-gap: 21px;
+    grid-column-gap: 14px;
 
     @include desktop {
         grid-template-columns: repeat(2, 1fr);
@@ -45,12 +45,12 @@
 }
 
 .skills__description {
-    font-size: 21px;
+    font-size: 19px;
     line-height: 25px;
     color: $black;
     font-weight: $bold;
 
-    margin-left: 20px;
+    margin-left: 18px;
 
     @include tablets {
         font-size: 17px;
@@ -84,17 +84,16 @@
         opacity: 1;
         transition: opacity $delay;
     }
+}
 
-    &:after {
-        content: "";
-        display: block;
-        position: absolute;
+.skills__checkbox-btn {
+    display: block;
+    position: absolute;
 
-        background: url('../../images/checkbox.png') center center / cover no-repeat; 
+    background: url('../../images/checkbox.png') center center / cover no-repeat; 
 
-        width: 18px;
-        height: 18px; 
-    }
+    width: 18px;
+    height: 18px; 
 }
 
 .skills__checkbox:not(:checked) {

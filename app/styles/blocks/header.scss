@@ -1,12 +1,12 @@
 .header {
-    margin-bottom: 50px;
+    margin-bottom: 52px;
 
     @include phones {
         margin-bottom: 35px;
     }
 }
 
-.header__logo-wrapper {
+.header__wrapper {
     display: flex;
     justify-content: space-between;
 
@@ -22,7 +22,7 @@
 }
 
 .header__logo {
-    width: 154px;
+    width: 148px;
     height: 52px;
 
     @include phones {
@@ -31,11 +31,10 @@
 }
 
 .header__secret {
-    width: 252px;
-    height: 106px;
+    width: 238px;
+    height: 100px;
 
-    top: -13px;
-    position: relative;
+    transform: translate(-10px, -14px);
     
     @include tablets {
         left: 15px;
@@ -47,8 +46,8 @@
 }
 
 .header__file {
-    width: 221px;
-    height: 118px;
+    width: 206px;
+    height: 104px;
     overflow: hidden;
     margin: 0 auto;
 

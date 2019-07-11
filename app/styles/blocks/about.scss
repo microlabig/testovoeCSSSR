@@ -1,8 +1,12 @@
 .about {
-    margin-bottom: 32px;
+    margin-bottom: 22px;
+
+    & .title {
+        margin-bottom: 4px;
+    }
 
     & .description {
-        margin-bottom: 22px;
+        margin-bottom: 19px;
 
         @include tablets {
             margin-bottom: 0;

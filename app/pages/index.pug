@@ -11,7 +11,7 @@ html(lang="ru")
 
             header.header
                 .header__container
-                    .header__logo-wrapper
+                    .header__wrapper
                         .header__logo
                             img(src="../images/logo.png" alt="CSSSR").header__icon
                         .header__secret
@@ -29,23 +29,23 @@ html(lang="ru")
                              var contactsArray = [
                                 {
                                     description: "Полное ФИО",
-                                    value: "Безместин Игорь Юрьевич"
+                                    value: "Иванов Иван Иванович"
                                 },
                                 {
                                     description: "Год рождения",
-                                    value: "1988"
+                                    value: "1990"
                                 },                    
                                 {
                                     description: "Место жительства",
-                                    value: "г. Арзамас, Россия"
+                                    value: "г. Иваново, Россия"
                                 },
                                 {
                                     description: "Скайп",
-                                    value: "igor-rock_1"
+                                    value: "ivanov"
                                 },
                                 {
                                     description: "Почта",
-                                    value: "igorbezmestin@gmail.com"
+                                    value: "ivanovgmail.com"
                                 }
                              ]
                             - for (var i = 0; i < contactsArray.length; i++)
@@ -127,7 +127,8 @@ html(lang="ru")
                                                 input(type="checkbox" checked).skills__checkbox.hidden
                                             else 
                                                 input(type="checkbox").skills__checkbox.hidden
-                                            .skills__checkbox-fake                                                                                                
+                                            .skills__checkbox-fake
+                                                button(type="button").skills__checkbox-btn
                                             .skills__description !{skillsArray[i].description}
                     
                 section.jslevel
@@ -183,4 +184,4 @@ html(lang="ru")
                 .footer__container
                     p.footer__text Дата заполнения
                     label.footer__label
-                        input(type="text" value="01.07.2019").footer__input
+                        input(type="text" value="01.01.2016").footer__input

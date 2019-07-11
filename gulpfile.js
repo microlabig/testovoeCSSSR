@@ -50,11 +50,11 @@ task('styles', () => {
         //.pipe(sass().on('error', sass.logError))
         .pipe(wait(1500))
         .pipe(sass({ outputStyle: 'expand' }).on("error", notify.onError() ))
-        /* .pipe(px2rem({
+        .pipe(px2rem({
             dpr: 1,             // base device pixel ratio (default: 2)
             rem: 15,            // root element (html) font-size (default: 16)
             one: false          // whether convert 1px to rem (default: false)
-        }))  */
+        })) 
         .pipe(gulpif(env === 'dev', autoprefixer({ cascade: false })))
         .pipe(gulpif(env === 'build', gcmq()))
         .pipe(gulpif(env === 'build', cleanCSS()))

@@ -27,8 +27,8 @@ main {
 
 body {
     font-family: 'pt-sans', Arial, sans-serif;
-    line-height: 1.42;
-    font-size: 15px;
+    line-height: 1.41;
+    font-size: 14px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: $text-color;
@@ -80,7 +80,7 @@ textarea {
     
     font-family: "Courier New", "Courier", serif;
     font-weight: 100;
-    font-size: 30px;
+    font-size: 28px;
     //line-height: 1.42;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -106,7 +106,7 @@ textarea {
 
     background: url('../../images/bg.jpg') center center / cover no-repeat;
     margin: 0 auto;
-    padding: 72px 54px 97px 112px;
+    padding: 72px 54px 97px 114px;
 
     @include desktop {
         padding-left: 90px;
@@ -124,9 +124,9 @@ textarea {
 }
 
 .maincontent {
-    padding-right: 64px;
+    padding-right: 72px;
     
-    margin-bottom: 76px;
+    margin-bottom: 73px;
 
     @include desktop {
         padding-right: 0;
@@ -143,8 +143,8 @@ textarea {
 }
 
 .title {
-    font-size: 24px;
-    line-height: 45px;
+    font-size: 23px;
+    line-height: 40px;
     
     @include tablets {
         font-size: 20px;
@@ -157,7 +157,7 @@ textarea {
 }
 
 .description {
-    margin-bottom: 35px;
+    margin-bottom: 32px;
     
     @include tablets {
         margin-bottom: 25px;        
