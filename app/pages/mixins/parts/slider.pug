@@ -1,0 +1,10 @@
+mixin slider(levels)
+    .slider
+        .slider__pin
+            button(type="button").slider__button
+        .slider__pic
+        //- data-level - здесь изменять значение слайдера
+        ul(data-level="3").slider__level
+            each level in levels
+                li.slider__level-item
+                    p.slider__text !{level}

@@ -1,0 +1,17 @@
+mixin skills(skillsArray)
+    section.skills
+        .container
+            h2.title Расскажите о себе чекбоксами
+            p.description Отметьте чекбоксами пункты, которые соответствуют вашим скиллам. Кстати, отсутствие опыта не означает, что у вас меньше шансов стать одним из наших товарищей. Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.
+            .skills__wrapper
+                ul.skills__list                
+                    - for (var i = 0; i < skillsArray.length; i++)
+                        li.skills__item
+                            label.skills__label
+                                if skillsArray[i].checked                                        
+                                    input(type="checkbox" checked).skills__checkbox.hidden
+                                else 
+                                    input(type="checkbox").skills__checkbox.hidden
+                                .skills__checkbox-fake
+                                    button(type="button").skills__checkbox-btn
+                                .skills__description !{skillsArray[i].description}

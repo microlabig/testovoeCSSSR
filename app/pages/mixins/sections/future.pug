@@ -1,0 +1,16 @@
+mixin future(plans)
+    section.future
+        .container
+            h2.title Какие у вас планы на будущее?
+            p.description Этот ответ ни на что не повлияет. Не беда, если в будущем ваши планы поменяются.
+            ul.future__list
+                each plan in plans
+                    li.future__item
+                        label.future__label
+                            if plan.checked
+                                input(type="radio" name="future" checked).future__radiobutton.hidden
+                            else
+                                input(type="radio" name="future").future__radiobutton.hidden
+                            .future__radio-fake
+                                button(type="button").future__radio-btn
+                            p.future__text #{plan.text}

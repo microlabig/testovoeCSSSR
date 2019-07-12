@@ -1,9 +1,16 @@
-.slider__button {
+.slider__button {    
     position: relative;
     background: url('../../images/button-slider.png') center center / cover no-repeat;
     
     width: 16px; 
     height: 14px;
+    transform: translateX(-7px);
+
+    transition: left 1s;
+
+    &.nodelayed {
+        transition: initial;
+    }    
 }
 
 .slider__pic {
@@ -25,13 +32,13 @@
     white-space: nowrap; 
 
     &:nth-of-type(1) {
-        margin-right: 10.3%;
+        margin-right: 11%;
     }
     &:nth-of-type(2) {
-        margin-right: 6.8%;
+        margin-right: 7.2%;
     }
     &:nth-of-type(3) {
-        margin-right: 10%;
+        margin-right: 11.3%;
     }    
 
     &:nth-of-type(1),

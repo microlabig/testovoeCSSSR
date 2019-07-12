@@ -1,3 +1,5 @@
+include ./mixins/entry
+
 <!DOCTYPE html>
 html(lang="ru")
     head
@@ -9,179 +11,118 @@ html(lang="ru")
     body
         .wrapper
 
-            header.header
-                .header__container
-                    .header__wrapper
-                        .header__logo
-                            img(src="../images/logo.png" alt="CSSSR").header__icon
-                        .header__secret
-                            img(src="../images/secret.png" alt="Секретно! Заполнено собственноручно").header__icon
-                    .header__file
-                        h1.hidden ДЕЛО
-                        img(src="../images/delo.png" alt="ДЕЛО").header__icon
+            +header
 
             main.maincontent
 
-                section.contacts
-                    .container
-                        ul.contacts__list
-                            -
-                             var contactsArray = [
-                                {
-                                    description: "Полное ФИО",
-                                    value: "Иванов Иван Иванович"
-                                },
-                                {
-                                    description: "Год рождения",
-                                    value: "1990"
-                                },                    
-                                {
-                                    description: "Место жительства",
-                                    value: "г. Иваново, Россия"
-                                },
-                                {
-                                    description: "Скайп",
-                                    value: "ivanov"
-                                },
-                                {
-                                    description: "Почта",
-                                    value: "ivanovgmail.com"
-                                }
-                             ]
-                            - for (var i = 0; i < contactsArray.length; i++)
-                                li.contacts__item
-                                    label.contacts__row
-                                        p.contacts__description #{contactsArray[i].description}
-                                        input(type="text" value=`${contactsArray[i].value}`).contacts__input
+                -
+                 var contactsArray = [
+                    {
+                        description: "Полное ФИО",
+                        value: "Безместин Игорь Юрьевич"
+                    },
+                    {
+                        description: "Год рождения",
+                        value: "1988"
+                    },                    
+                    {
+                        description: "Место жительства",
+                        value: "г. Арзамас, Россия"
+                    },
+                    {
+                        description: "Скайп",
+                        value: "igor-rock_1"
+                    },
+                    {
+                        description: "Почта",
+                        value: "igorbezmestin@gmail.com"
+                    }
+                 ]
+                +contacts(contactsArray)
                 
-                section.skills
-                    .container
-                        h2.title Расскажите о себе чекбоксами
-                        p.description Отметьте чекбоксами пункты, которые соответствуют вашим скиллам. Кстати, отсутствие опыта не означает, что у вас меньше шансов стать одним из наших товарищей. Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.
-                        .skills__wrapper
-                            ul.skills__list
-                                -
-                                 var skillsArray = [
-                                    {
-                                        description: "БЭМ/OOCSS", checked: true
-                                    },
-                                    {
-                                        description: "Pug (Jade)", checked: true
-                                    },
-                                    {
-                                        description: "Stylus/LESS/SASS", checked: true
-                                    },
-                                    {
-                                        description: "Работаю с SVG", checked: true
-                                    },
-                                    {
-                                        description: "Верстаю семантично", checked: true
-                                    },
-                                    {
-                                        description: "Accessibility (A11Y)", checked: true
-                                    },
-                                    {
-                                        description: "ES2015/ES2016", checked: true
-                                    },
-                                    {
-                                        description: "Gulp/GRUNT", checked: true
-                                    },
-                                    {
-                                        description: "Webpack", checked: true
-                                    },
-                                    {
-                                        description: "Дружу с WebGL", checked: false
-                                    },
-                                    {
-                                        description: "jQuery", checked: true
-                                    },
-                                    {
-                                        description: "Знаю/изучаю Angular", checked: false
-                                    },
-                                    {
-                                        description: "Знаю/изучаю React", checked: false
-                                    },
-                                    {
-                                        description: "Знаю/изучаю Node.js", checked: false
-                                    },
-                                    {
-                                        description: "Использую Git", checked: true
-                                    },
-                                    {
-                                        description: "С глазомером всё ок", checked: true
-                                    },
-                                    {
-                                        description: "Читаю <a class='skills__link' href='//blog.csssr.ru'>blog.csssr.ru</a>", checked: false
-                                    },
-                                    {
-                                        description: "Я ленивый(-ая)", checked: false
-                                    },
-                                    {
-                                        description: "У меня хороший английский", checked: false
-                                    },
-                                 ]
-                                - for (var i = 0; i < skillsArray.length; i++)
-                                    li.skills__item
-                                        label.skills__label
-                                            if skillsArray[i].checked                                        
-                                                input(type="checkbox" checked).skills__checkbox.hidden
-                                            else 
-                                                input(type="checkbox").skills__checkbox.hidden
-                                            .skills__checkbox-fake
-                                                button(type="button").skills__checkbox-btn
-                                            .skills__description !{skillsArray[i].description}
-                    
-                section.jslevel
-                    .container
-                        h2.title Уровень владения JavaScript
-                        .slider
-                            .slider__pin
-                                button(type="button").slider__button
-                            .slider__pic
-                            ul(data-level="2").slider__level
-                                -
-                                 var jsLevelArray = [
-                                    'Не владею', 
-                                    'Использую готовые решения', 
-                                    'Использую готовые решения <br/> и умею их переделывать',
-                                    'Пишу сложный JS с нуля'
-                                 ]
-                                each level in jsLevelArray
-                                    li.slider__level-item
-                                        p.slider__text !{level}
+                -
+                 var skillsArray = [
+                    {
+                        description: "БЭМ/OOCSS", checked: true
+                    },
+                    {
+                        description: "Pug (Jade)", checked: true
+                    },
+                    {
+                        description: "Stylus/LESS/SASS", checked: true
+                    },
+                    {
+                        description: "Работаю с SVG", checked: true
+                    },
+                    {
+                        description: "Верстаю семантично", checked: true
+                    },
+                    {
+                        description: "Accessibility (A11Y)", checked: true
+                    },
+                    {
+                        description: "ES2015/ES2016", checked: true
+                    },
+                    {
+                        description: "Gulp/GRUNT", checked: true
+                    },
+                    {
+                        description: "Webpack", checked: true
+                    },
+                    {
+                        description: "Дружу с WebGL", checked: false
+                    },
+                    {
+                        description: "jQuery", checked: true
+                    },
+                    {
+                        description: "Знаю/изучаю Angular", checked: false
+                    },
+                    {
+                        description: "Знаю/изучаю React", checked: false
+                    },
+                    {
+                        description: "Знаю/изучаю Node.js", checked: false
+                    },
+                    {
+                        description: "Использую Git", checked: true
+                    },
+                    {
+                        description: "С глазомером всё ок", checked: true
+                    },
+                    {
+                        description: "Читаю <a class='skills__link' href='//blog.csssr.ru'>blog.csssr.ru</a>", checked: false
+                    },
+                    {
+                        description: "Я ленивый(-ая)", checked: false
+                    },
+                    {
+                        description: "У меня хороший английский", checked: false
+                    },
+                 ]
+                +skills(skillsArray)
 
-                section.about
-                    .container
-                        h2.title Расскажите о себе словами
-                        p.description Напишите пару предложений, чем вас привлекла наша вакансия и чего вы ожидаете от работы в CSSSR. Кстати, будет здорово, если при нехватке места для текста строки будут добавляться автоматически.
-                        label.about__label
-                            - var aboutText = 'Ну-ууу-уу...\nЭэээ...'
-                            textarea.about__textarea #{aboutText}
+                -
+                 var jsLevelArray = [
+                    'Не владею', 
+                    'Использую готовые решения', 
+                    'Использую готовые решения <br/> и умею их переделывать',
+                    'Пишу сложный JS с нуля'
+                 ]
+                +jslevel(jsLevelArray)
+
+                - var textAbout = 'Ну-ууу-уу...\nЭэээ...'                
+                +about(textAbout)                                
                 
-                section.future
-                    .container
-                        h2.title Какие у вас планы на будущее?
-                        p.description Этот ответ ни на что не повлияет. Не беда, если в будущем ваши планы поменяются.
-                        ul.future__list
-                            -
-                             var futureArray = [
-                                {text: 'Верстать', checked: true}, 
-                                {text: 'Прокачиваться в JS'}, 
-                                {text: 'Менеджерство'}, 
-                                {text: 'Другое'}
-                             ]
-                            each plan in futureArray
-                                li.future__item
-                                    label.future__label
-                                        if plan.checked
-                                            input(type="radio" name="future" checked).future__radiobutton.hidden
-                                        else
-                                            input(type="radio" name="future").future__radiobutton.hidden
-                                        .future__radio-fake                                                  
-                                        p.future__text #{plan.text}
+                -
+                 var futureArray = [
+                    {text: 'Верстать'}, 
+                    {text: 'Прокачиваться в JS', checked: true}, 
+                    {text: 'Менеджерство'}, 
+                    {text: 'Другое'}
+                 ]
+                +future(futureArray)                            
 
-            footer.footer
-                .footer__container
-                    p.footer__text Дата заполнения
-                    label.footer__label
-                        input(type="text" value="01.01.2016").footer__input
+            +footer
+        
+        script(src="main.min.js")

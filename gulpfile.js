@@ -133,7 +133,8 @@ task('watch', ()=> {
 // таск по умолчанию
 task('default', 
     series('clean', 
-            parallel('pug', 'styles', 'scripts', /* 'icons', */ 'copy:img', 'copy:fonts'), 
+            parallel('copy:img', 'copy:fonts'), 
+            parallel('pug', 'styles', 'scripts', /* 'icons', */ ), 
             parallel('watch', 'server')
     )
 );

@@ -1,0 +1,9 @@
+mixin contacts(contactsInfo)
+    section.contacts
+        .container
+            ul.contacts__list
+                - for (var i = 0; i < contactsArray.length; i++)
+                    li.contacts__item
+                        label.contacts__row
+                            p.contacts__description #{contactsInfo[i].description}
+                            input(type="text" value=`${contactsInfo[i].value}`).contacts__input
