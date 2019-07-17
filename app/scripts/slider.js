@@ -101,9 +101,6 @@
     // определим начальные breakpoints
     setPinBreakPoints(sliderWidth, sliderX);
 
-    // переместим ползунок в соответствии с нашим скиллом
-    movePin(pinBreakPoints[myLevelJS]); 
-
     //--------------------------------
     //       обработчики событий
     //--------------------------------
@@ -179,4 +176,8 @@
         // переместим ползунок к breakpoint по-умолчанию
         movePin(pinBreakPoints[myLevelJS]);
     });
+    
+
+    // переместим ползунок в соответствии с нашим скиллом
+    movePin(pinBreakPoints[myLevelJS]);
 }());
