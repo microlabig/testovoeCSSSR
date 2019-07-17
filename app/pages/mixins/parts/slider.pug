@@ -7,4 +7,4 @@ mixin slider(levels)
         ul(data-level="3").slider__level
             each level in levels
                 li.slider__level-item
-                    p.slider__text !{level}
+                    button(type="button").slider__text !{level}

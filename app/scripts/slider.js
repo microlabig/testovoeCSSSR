@@ -37,7 +37,7 @@
         pinBreakPoints = [];
         // найдем все breakpoints
         sliderBreakpointsXPercentArr.forEach( item => {        
-            pinBreakPoints.push(item/100 * parseInt(sWidth) + sX - 8); // -8 это ~ половина от ширины ползунка
+            pinBreakPoints.push(Math.round(item/100 * parseInt(sWidth) + sX - 8)); // -8 это ~ половина от ширины ползунка
         });
     }    
     
@@ -176,7 +176,29 @@
         // переместим ползунок к breakpoint по-умолчанию
         movePin(pinBreakPoints[myLevelJS]);
     });
-    
+
+    // обработка клавиш со стрелками на ползунке
+    sliderWrapper.addEventListener('keydown', e => {
+        const key = e.keyCode; // код нажатой клавиши
+        let currIndex = 0, // текущий индекс breakpoint'а, на котором находится ползунок
+            currPos = Math.trunc(pin.getBoundingClientRect().x); 
+
+        // определим текущий индекс breakpoint'а        
+        for (let i = 0; i < pinBreakPoints.length; i++) 
+            if (currPos > Math.trunc(pinBreakPoints[i])) 
+                currIndex++;        
+        
+        if (!isMoved) { // если не передвигаем мышкой
+            switch (key) {
+                case 37: // влево
+                    if (currIndex > 0) movePin(pinBreakPoints[currIndex - 1]);                     
+                    break;
+                case 39: // вправо
+                    if (currIndex < pinBreakPoints.length - 1) movePin(pinBreakPoints[currIndex + 1]);                    
+                    break;
+            }
+        }
+    });
 
     // переместим ползунок в соответствии с нашим скиллом
     movePin(pinBreakPoints[myLevelJS]);
