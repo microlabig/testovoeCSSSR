@@ -8,6 +8,10 @@ VK - [vk.com/igorbezmestin](https://vk.com/igorbezmestin)
 
 Телеграмм - [@BezmestinIY](https://t.me/BezmestinIY)
 
+Мой круг - [https://moikrug.ru/microlabig](https://moikrug.ru/microlabig)
+
+LinkedIn - [https://www.linkedin.com/in/microlabig/](https://www.linkedin.com/in/microlabig/)
+
 ---
 
 ## Запуск проекта
@@ -37,7 +41,7 @@ yarn build
 │   │   ├── radiobutton.js        # Обработка нажатий на radiobutton (для A11y)
 │   │   ├── slider.js             # Реализация слайдера
 │   │   └── textarea.js           # Скрипт автоматического добавления строк в textarea
-│   ├── images/                   # Папка для хранения изображений│   │   
+│   ├── images/                   # Папка для хранения изображений 
 │   ├── styles/                   # Стили (SASS)
 │   │   ├── blocks/               # Стили отдельных компонентов
 │   │   ├── layout/               # Базовые стили проекта

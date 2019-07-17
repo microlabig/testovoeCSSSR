@@ -28,6 +28,11 @@
 }
 
 .skills__item {
+    
+    &:hover {
+        opacity: .7;
+    }
+
     @include phones {
         margin-bottom: 8px;
         margin-left: 10px;
@@ -93,7 +98,7 @@
     background: url('../../images/checkbox.png') center center / cover no-repeat; 
 
     width: 18px;
-    height: 18px; 
+    height: 18px;    
 }
 
 .skills__checkbox:not(:checked) {

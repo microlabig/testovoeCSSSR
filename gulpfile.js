@@ -104,6 +104,13 @@ task("copy:img", () => {
         .pipe(reload({ stream: true })); //перезагрузим браузер (задача выполняется внутри потока (stream:true))
 });
 
+// таск копирования иконки сайта
+task("copy:favicon", () => {
+    return src(`${SRC_PATH}/images/favicon/favicon.*`)
+        .pipe(dest(`${DIST_PATH}`))
+        .pipe(reload({ stream: true })); //перезагрузим браузер (задача выполняется внутри потока (stream:true))
+});
+
 // таск копирования шрифтов
 task("copy:fonts", () => {
     return src(`${SRC_PATH}/fonts/*.*`)
@@ -133,7 +140,7 @@ task('watch', ()=> {
 // таск по умолчанию
 task('default', 
     series('clean', 
-            parallel('copy:img', 'copy:fonts'), 
+            parallel('copy:img', 'copy:fonts', 'copy:favicon'), 
             parallel('pug', 'styles', 'scripts', /* 'icons', */ ), 
             parallel('watch', 'server')
     )
@@ -142,6 +149,6 @@ task('default',
 // таск build
 task('build', 
     series('clean', 
-            parallel('pug', 'styles', 'scripts', /* 'icons', */ 'copy:img', 'copy:fonts')
+            parallel('pug', 'styles', 'scripts', /* 'icons', */ 'copy:img', 'copy:fonts', 'copy:favicon')
     )
 );

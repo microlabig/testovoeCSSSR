@@ -25,6 +25,10 @@
 
 .future__item {    
     margin-right: 21px;
+    
+    &:hover {
+        opacity: .7;
+    }
 
     &:last-child {
         margin-right: 0;

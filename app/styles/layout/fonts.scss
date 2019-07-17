@@ -1,4 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Courier+New:400');
+//@import url('https://fonts.googleapis.com/css?family=Courier+New:400');
+
+@font-face {
+    font-family: 'CourierNewPSMT';
+    src: url('../../fonts/cour___0-webfont.woff2') format('woff2'), url('../../fonts/cour___0-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 @font-face {
     font-family: 'pt-sans';

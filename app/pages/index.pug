@@ -67,7 +67,7 @@ html(lang="ru")
                         description: "Gulp/GRUNT", checked: true
                     },
                     {
-                        description: "Webpack", checked: true
+                        description: "Webpack", checked: false
                     },
                     {
                         description: "Дружу с WebGL", checked: false
@@ -111,7 +111,13 @@ html(lang="ru")
                  ]
                 +jslevel(jsLevelArray)
 
-                - var textAbout = 'Ну-ууу-уу...\nЭэээ...'                
+                -
+                 var textAbout = 'Увлекаюсь Front-End, закончил курсы веб-разработки Loftschool \
+                 на отлично (выпускной проект http://www.igorbezmestin.ru/). Стараюсь постоянно развиваться в \
+                 профессиональном и личностном плане. \
+                 Работа в CSSSR - удачный выбор, \
+                 т.к. ищу работу с конкурентной зароботной платой, удаленным графиком на постоянной основе, \
+                 возможностью профессионального роста во Front-End разработке.'
                 +about(textAbout)                                
                 
                 -
@@ -123,6 +129,6 @@ html(lang="ru")
                  ]
                 +future(futureArray)                            
 
-            +footer('12.07.2019')
+            +footer('17.07.2019')
         
         script(src="main.min.js")
